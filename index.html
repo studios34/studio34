@@ -1,484 +1,138 @@
 <!DOCTYPE html>
-</body>
-<!-- redeploy 2025-10-04 -->
-</html>
-
 <html lang="en">
 <head>
-	
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>studio34  Athletic. Intense. Pilates.</title>
-  <meta name="description" content="studio34  Athletic. Intense. Pilates. " />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio34 — Coming Soon</title>
+
   <style>
-    :root{
-      /* Brand variables â€” tweak these to exactly match the brand kit swatches */
-      --brand-bg: #0a0d12;            /* Night blue / studio ambience */
-      --brand-ink: #e8eefc;           /* Offâ€‘white text */
-      --brand-mid: #9fb7ff;           /* Muted electric blue */
-      --brand-primary: #3461ff;       /* Core blue (glow) */
-      
-      --brand-card: #101621;          /* Card surface */
-      --brand-line: #1e2736;          /* Hairline dividers */
-      --maxw: 1200px;
-      --radius: 22px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    :root {
+      --blue: #2f3cff;
+      --bg: #f6f7f9;
+      --text-dark: #1f2933;
+      --text-muted: #6b7280;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:"Lexend",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
-      color:var(--brand-ink); background:linear-gradient(180deg,var(--brand-bg),#06080c 55%);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--maxw); margin-inline:auto; padding:0 20px}
-    header{
-      position:sticky; top:0; z-index:40; backdrop-filter:saturate(140%) blur(10px);
-      background:linear-gradient(180deg,rgba(6,8,12,.8),rgba(6,8,12,.35));
-      border-bottom:1px solid var(--brand-line);
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .nav{display:flex; align-items:center; justify-content:space-between; min-height:68px}
-    .logo{display:flex; align-items:center; gap:.55rem; font-weight:800; letter-spacing:.5px}
-    .logo-badge{display:inline-grid; place-items:center; height:34px; width:34px; border-radius:50%;
-      
-      
+
+    /* ===== HEADER ===== */
+    header {
+      width: 100%;
+      padding: 32px 0;
+      display: flex;
+      justify-content: center;
     }
-    .logo-word{font-size:1.05rem; opacity:.9}
-    .tag-dot{height:8px; width:8px; border-radius:50%; background:var(--brand-accent); box-shadow:0 0 0 3px rgba(227,39,43,.15)}
-    .menu{display:flex; gap:1rem}
-    .menu a{opacity:.85}
-    .menu a:hover{opacity:1}
-    .cta{padding:.7rem 1rem; border-radius:999px; background:linear-gradient(90deg,var(--brand-primary),#5f82ff);
-      box-shadow:0 10px 24px rgba(52,97,255,.35); border:1px solid rgba(255,255,255,.06)}
-    .cta:active{transform:translateY(1px)}
-    .burger{display:none}
-    .nav{display:flex; align-items:center; justify-content:space-between; min-height:68px}
-    .logo{display:flex; align-items:center; gap:.55rem; font-weight:800; letter-spacing:.5px}
-    .logo-badge{display:inline-grid; place-items:center; height:34px; width:34px; border-radius:50%;
-  background:radial-gradient(70% 70% at 30% 30%, var(--brand-mid), var(--brand-primary) 70%);
-  box-shadow:0 0 22px rgba(52,97,255,.55), inset 0 0 24px rgba(255,255,255,.08);
-  font-weight:800; font-size:.95rem; text-shadow:0 2px 8px rgba(0,0,0,.45);
-}
 
-    /* HERO */
-    .hero{position:relative; isolation:isolate; overflow:hidden}
-    .hero .wrap{padding:72px 20px 56px}
-    .glow{position:absolute; inset:auto -10% -20% -10%; height:420px; z-index:-1;
-      background:radial-gradient(55% 65% at 50% 0%, rgba(52,97,255,.55), rgba(15,25,48,.0) 70%),
-                 radial-gradient(40% 55% at 80% 30%, rgba(52,97,255,.35), rgba(15,25,48,.0) 70%),
-                 radial-gradient(30% 45% at 20% 30%, rgba(52,97,255,.25), rgba(15,25,48,.0) 70%);
-      filter:blur(16px)}
-    .hero h1{font-size:clamp(2.2rem, 4vw + 1rem, 4.2rem); line-height:1.02; margin:0 0 16px; font-weight:800}
-    .hero p{font-size:clamp(1rem, .6vw + .7rem, 1.25rem); opacity:.9; max-width:66ch}
-    .hero-cta{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
-    .btn-alt{padding:.7rem 1rem; border-radius:999px; background:transparent; border:1px solid var(--brand-line)}
-    
+    .logo {
+      height: 36px;
+    }
 
-    /* SECTIONS */
-    section{padding:56px 0; border-top:1px solid var(--brand-line)}
-    h2{font-size:clamp(1.4rem, .8vw + 1.1rem, 2rem); margin:0 0 18px}
-    .grid{display:grid; gap:18px}
-    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media (max-width: 900px){.cols-3,.cols-2{grid-template-columns:1fr} .menu{display:none} .burger{display:block}}
+    /* ===== MAIN ===== */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-    .card{background:linear-gradient(180deg,var(--brand-card),#0c1320); border:1px solid var(--brand-line);
-      border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
-    .pill{display:inline-flex; align-items:center; gap:.5ch; padding:.35rem .65rem; border-radius:999px;
-      background:rgba(255,255,255,.04); border:1px solid var(--brand-line); font-size:.8rem; opacity:.9}
-    .muted{opacity:.8}
+    .soon {
+      font-size: clamp(64px, 12vw, 120px);
+      font-weight: 800;
+      color: #4b6f63;
+      letter-spacing: -0.04em;
+    }
 
-    /* MERCH */
-    .product-media{width:100%; aspect-ratio:4/3; border-radius:16px; background:linear-gradient(135deg,#0f1726,#0a0f1b); border:1px solid var(--brand-line); position:relative; overflow:hidden}
-    .tote::before{content:""; position:absolute; inset:16px 22% auto 22%; height:56%; border-radius:14px; background:linear-gradient(180deg,#131c2c,#0a111e); border:1px solid var(--brand-line); box-shadow: inset 0 20px 40px rgba(0,0,0,.35)}
-    .tote::after{content:""; position:absolute; top:12px; left:50%; transform:translateX(-50%); width:60%; height:16px; border-radius:999px; background:linear-gradient(90deg, var(--brand-accent), #ff6b6e); box-shadow:0 8px 22px rgba(227,39,43,.35)}
-    .buy-row{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:10px}
+    .subtitle {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
 
-    /* CLASSES */
-    .class-card h3{margin:8px 0 6px}
-    .class-meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 28px 0 36px;
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
 
-    /* SCHEDULE */
-    .filters{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 18px}
-    .table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:var(--radius); border:1px solid var(--brand-line)}
-    .table th,.table td{padding:14px; text-align:left; border-bottom:1px solid var(--brand-line)}
-    .table th{background:rgba(255,255,255,.03)}
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
 
-    /* TEAM */
-    .avatar{height:64px; width:64px; border-radius:14px; background:linear-gradient(135deg,#1a2440,var(--brand-primary));
-      box-shadow:0 6px 18px rgba(52,97,255,.25); display:grid; place-items:center; font-weight:700}
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-    /* GALLERY */
-    .gallery{display:grid; gap:12px; grid-template-columns:repeat(6,1fr)}
-    .gallery > div{aspect-ratio:1/1; border-radius:16px; background:linear-gradient(135deg,#0f1726,#0a0f1b); border:1px solid var(--brand-line)}
-    .wide{grid-column:span 3}
-    .tall{grid-row:span 2}
-    @media (max-width: 900px){.gallery{grid-template-columns:repeat(2,1fr)} .wide{grid-column:span 2}}
+    /* ===== MOBILE ===== */
+    @media (max-width: 480px) {
+      header {
+        padding: 24px 0;
+      }
 
-    /* PRICING */
-    .price{font-size:2rem; font-weight:800}
-
-    /* CONTACT */
-    form{display:grid; gap:12px; max-width:640px}
-    input,select,textarea{width:100%; padding:12px 14px; border-radius:14px; border:1px solid var(--brand-line);
-      background:#0a111e; color:var(--brand-ink)}
-    textarea{min-height:120px}
-    .notice{border-left:4px solid var(--brand-accent); padding:12px 14px; background:linear-gradient(90deg, rgba(227,39,43,.12), transparent)}
-
-    footer{padding:44px 0 60px; border-top:1px solid var(--brand-line); opacity:.9}
-    .subtle{font-size:.9rem; opacity:.8}
+      .logo {
+        height: 30px;
+      }
+    }
   .auto-style1 {
-	margin-top: 0px;
+	text-align: center;
 }
-
+.auto-style2 {
+	font-size: clamp(64px, 12vw, 120px);
+	font-weight: 800;
+	color: #0000EA;
+	letter-spacing: -0.04em;
+}
+.auto-style3 {
+	margin-left: 42;
+}
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="wrap nav">
-      <a href="#" class="logo" aria-label="studio34 home">
-        <span class="logo-badge">s34</span>
-        <span class="logo-word">studio34</span>
-      
-      </a>
-      <nav class="menu" aria-label="primary">
-        <a href="#merch">Merch</a>
-        <a href="#classes">Classes</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#team">Team</a>
-        <a href="#gallery">Studio</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="cta" href="#book">Book a class</a>
-      <button class="burger" aria-label="Open menu" onclick="toggleMenu()">â˜°</button>
-    </div>
+
+  <!-- LOGO -->
+  <header class="auto-style1">
+      <img class="auto-style3" height="32" src="Group%201.png" width="220">
+	  <p>&nbsp;</p>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="pop-accent" aria-hidden="true"></div>
-      <div class="wrap">
-        <h1>Athletic. Intense. Pilates.</h1>
-        <p>High energy reformer & mat classes engineered for results. Clean lines, bold lighting,welcome to <strong>studio34</strong>.</p>
-        <div class="hero-cta">
-          <a class="cta" href="#book">Start now</a>
-          <a class="btn-alt" href="#classes">Explore classes</a>
-        </div>
-      </div>
-      <div class="glow" aria-hidden="true"></div>
-    </section>
-
-    <!-- CLASSES -->
-    <section id="classes">
-      <div class="wrap">
-        <h2>Classes</h2>
-        <div class="grid cols-3">
-          <article class="card class-card">
-            <span class="pill">Reformer</span>
-            <h3>Power 34</h3>
-            <p class="muted">Athletic, fullâ€‘body intensity with tempo changes and slow burners. Great for intermediate to advanced.</p>
-            <div class="class-meta">
-              <span class="pill">50 min</span>
-              <span class="pill">Max 8</span>
-              <span class="pill">Sweat level: High</span>
-            </div>
-          </article>
-          <article class="card class-card">
-            <span class="pill">Mat</span>
-            <h3>Foundations</h3>
-            <p class="muted">Formâ€‘first sequencing to build strength, control and confidence. Perfect if youâ€™re new or returning.</p>
-            <div class="class-meta">
-              <span class="pill">45 min</span>
-              <span class="pill">All levels</span>
-            </div>
-          </article>
-          <article class="card class-card">
-            <span class="pill">Hybrid</span>
-            <h3>Glow Core</h3>
-            <p class="muted">A musicâ€‘driven burn that blends reformer, mat and mobilityâ€”set under cool blue lights.</p>
-            <div class="class-meta">
-              <span class="pill">50 min</span>
-              <span class="pill">All levels</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCHEDULE -->
-    <section id="schedule">
-      <div class="wrap">
-        <h2>Schedule</h2>
-        <div class="filters">
-          <select id="dayFilter" aria-label="Filter by day">
-            <option value="">All days</option>
-            <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
-            <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
-          </select>
-          <select id="typeFilter" aria-label="Filter by class type">
-            <option value="">All types</option>
-            <option>Power 34</option>
-            <option>Foundations</option>
-            <option>Glow Core</option>
-          </select>
-        </div>
-        <div class="card" style="padding:0">
-          <table class="table" id="schedTable">
-            <thead>
-              <tr><th>Day</th><th>Time</th><th>Class</th><th>Coach</th><th></th></tr>
-            </thead>
-            <tbody>
-              <tr data-day="Monday" data-type="Power 34"><td>Monday</td><td>06:00</td><td>Power 34</td><td>Vishva</td><td><a class="cta" href="#book">Book</a></td></tr>
-              <tr data-day="Monday" data-type="Foundations"><td>Monday</td><td>08:00</td><td>Foundations</td><td>name</td><td><a class="btn-alt" href="#book">Book</a></td></tr>
-              <tr data-day="Tuesday" data-type="Glow Core"><td>Tuesday</td><td>18:00</td><td>Glow Core</td><td>name</td><td><a class="btn-alt" href="#book">Book</a></td></tr>
-              <tr data-day="Wednesday" data-type="Power 34"><td>Wednesday</td><td>07:30</td><td>Power 34</td><td>name</td><td><a class="btn-alt" href="#book">Book</a></td></tr>
-              <tr data-day="Thursday" data-type="Foundations"><td>Thursday</td><td>17:30</td><td>Foundations</td><td>name</td><td><a class="btn-alt" href="#book">Book</a></td></tr>
-              <tr data-day="Saturday" data-type="Glow Core"><td>Saturday</td><td>09:00</td><td>Glow Core</td><td>name</td><td><a class="btn-alt" href="#book">Book</a></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section id="team">
-      <div class="wrap">
-        <h2>The Team</h2>
-        <div class="grid cols-3">
-          <article class="card">
-            <div style="display:flex; gap:14px; align-items:center">
-              <div class="avatar">VD</div>
-              <div>
-                <h3 style="margin:0 0 4px">Vishva Dave</h3>
-                <div class="muted"> CEO Reformer specialist</div>
-              </div>
-            </div>
-            <p class="muted" style="margin-top:10px">Obsessed with precision and breath expect slow eccentrics and spicy finishers.</p>
-          </article>
-          <article class="card">
-            <div style="display:flex; gap:14px; align-items:center">
-              <div class="avatar">D</div>
-              <div>
-                <h3 style="margin:0 0 4px">name</h3>
-                <div class="muted">Strength and Mobility</div>
-              </div>
-            </div>
-            <p class="muted" style="margin-top:10px">Formâ€‘first, musicâ€‘tight. Will correct your feet, then your core, then your feet again.</p>
-          </article>
-          <article class="card">
-            <div style="display:flex; gap:14px; align-items:center">
-              <div class="avatar">P</div>
-              <div>
-                <h3 style="margin:0 0 4px">name</h3>
-                <div class="muted">Hybrid and Flow</div>
-              </div>
-            </div>
-            <p class="muted" style="margin-top:10px">Fluid sequencing with a sneaky burn. Blueâ€‘light vibes guaranteed.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- STUDIO GALLERY -->
-    <section id="gallery">
-      <div class="wrap">
-        <h2>Studio</h2>
-		  <table style="width: 100%">
-			  <tr>
-				  <td style="width: 454px">
-				  <img alt="reception" height="684" src="studio 1.jpg" width="500"><img alt="studio 1" class="auto-style1" height="607" src="studio 2.jpg" width="500"></td>
-				  <td><img alt="studio 2" height="654" src="studio 3.jpg" width="478"><img alt="studio 3" src="studio 4.jpg" width="500"></td>
-			  </tr>
-			  <tr>
-				  <td style="width: 454px">&nbsp;</td>
-				  <td>&nbsp;</td>
-			  </tr>
-		  </table>
-        
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing">
-      <div class="wrap">
-        <h2>Pricing</h2>
-        <div class="grid cols-3">
-          <article class="card">
-            <h3>Drop in</h3>
-            <div class="price">INR 1,000</div>
-            <p class="muted">One class. Any format.</p>
-            <a class="cta" href="#book">Book</a>
-          </article>
-          <article class="card">
-            <h3>5‘Class Pack</h3>
-            <div class="price">INR 4,000</div>
-            <p class="muted">Valid 6 weeks. Shareable.</p>
-            <a class="cta" href="#book">Choose</a>
-          </article>
-          <article class="card" style="position:relative">
-            <div class="pill" style="position:absolute; right:12px; top:12px">Most popular</div>
-            <h3>Unlimited</h3>
-            <div class="price">INR&nbsp; 6,000</div>
-            <p class="muted">30 days. Freeze up to 7 days.</p>
-            <a class="cta" href="#book">Join</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- MERCH -->
-    <section id="merch">
-      <div class="wrap">
-        <h2>Merch</h2>
-        <p class="muted">Limited run gear to match the studio aesthetic.</p>
-		  <table style="width: 100%">
-			  <tr>
-				  <td>
-				  <table style="width: 100%">
-					  <tr>
-						  <td>
-						 <img src="studio 5.jpg" alt="Studio34 Tote Bag" width="300">
-</td>
-					  </tr>
-				  </table>
-				  </td>
-			  </tr>
-		  </table>
-        <div class="grid cols-3">
-          <article class="card product">
-            <h3>Studio34 Tote Bag</h3>
-            <p class="muted">Everyday carry in heavy canvas with the bold <strong>s34</strong> mark. Designed to pair with the studios blue and red palette.</p>
-            <div class="class-meta">
-              <span class="pill">Canvas</span>
-              <span class="pill">One size</span>
-              <span class="pill">New</span>
-            </div>
-            <div class="buy-row">
-              <div class="price">INR 900</div>
-              <button class="cta" type="button" onclick="addToCart('Studio34 Tote Bag', INR 900)">Add to cart</button>
-            </div>
-            <!-- Replace the .tote placeholder with a real product image exported from your brand kit PDF. -->
-          </article>
-        </div>
-        <p class="subtle" style="margin-top:8px">Mock checkout onlyâ€”payments not wired yet.</p>
-      </div>
-    </section>
-
-    <!-- CONTACT / BOOK -->
-    <section id="contact">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <div class="grid cols-2">
-          <div class="card">
-            <form id="book">
-              <label>
-                <span>Name</span>
-                <input required placeholder="Your name" />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" required placeholder="you@example.com" />
-              </label>
-              <label>
-                <span>Class</span>
-                <select>
-                  <option>Power 34</option>
-                  <option>Foundations</option>
-                  <option>Glow Core</option>
-                </select>
-              </label>
-              <label>
-                <span>Message</span>
-                <textarea placeholder="Anything we should know?"></textarea>
-              </label>
-              <button class="cta" type="submit">Request booking</button>
-              <p class="subtle">Submitting will simulate a booking (no backend yet).</p>
-            </form>
-          </div>
-          <div class="card">
-            
-            <p class="muted" style="margin-top:10px">Find us: Banglore................</p>
-            <p class="muted">WhatsApp: +91............</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="auto-style2">
+		<h2>soon</h2>
+  </div>
+    <div class="subtitle">
+      We’re getting everything ready. Studio34 is launching soon.
+    </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <div class="wrap">
-      <div class="subtle">© <span id="y"></span>   studio34. All rights reserved.</div>
-   
-	</div>
+    <a href="https://instagram.com/s34.in" target="_blank">Instagram</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="mailto:info@s34.in">info@s34.in</a>
   </footer>
 
-  <script>
-    // Mobile menu (simple)
-    function toggleMenu(){
-      const nav = document.querySelector('.menu');
-      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-    }
-    // Filters for schedule
-    const dayF = document.getElementById('dayFilter');
-    const typeF = document.getElementById('typeFilter');
-    const rows = () => Array.from(document.querySelectorAll('#schedTable tbody tr'));
-    function applyFilters(){
-      const d = dayF?.value || ''; const t = typeF?.value || '';
-      rows().forEach(r=>{
-        const ok = (!d || r.dataset.day===d) && (!t || r.dataset.type===t);
-        r.style.display = ok?'' : 'none';
-      });
-    }
-    dayF?.addEventListener('change', applyFilters);
-    typeF?.addEventListener('change', applyFilters);
-    // Year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-    // Fake form handler
-    document.getElementById('book').addEventListener('submit', e=>{
-      e.preventDefault();
-      alert('Thanks! We\'ll email you shortly to confirm your class.');
-    });
-    // Simple cart mock
-    function addToCart(name, price){
-      alert(name + ' added â€” UGX ' + price.toLocaleString());
-    }
-  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
